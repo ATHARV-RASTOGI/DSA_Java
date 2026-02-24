@@ -13,6 +13,26 @@ public class Link_list {
         this.size = 0;
     }
 
+    public static class Node {
+
+        int value;
+        Node next;
+
+        //by default constructor
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
+        }
+
+        public Node() {
+
+        }
+    }
+
 
     public void insertFirst(int val) {
 
@@ -137,25 +157,7 @@ public class Link_list {
     }
 
 
-    public static class Node {
 
-        int value;
-        Node next;
-
-        //by default constructor
-        public Node(int value) {
-            this.value = value;
-        }
-
-        public Node(int value, Node next) {
-            this.value = value;
-            this.next = next;
-        }
-
-        public Node() {
-
-        }
-    }
 
     //recurssion reverse
     private Node reverse(Node node) {
@@ -316,6 +318,23 @@ public class Link_list {
             f = f.next.next;
         }
         return s;
+    }
+
+    public Node deleteMiddle(Node head) {
+        if (head == null || head.next == null) return null;
+        Node dummy= new Node(0);
+        dummy.next=head;
+        Node p=dummy;
+        Node f= head;
+        Node s= head;
+        while(f!=null && f.next != null){
+            p=p.next;
+            s=s.next;
+            f=f.next.next;
+
+        }
+        p.next=s.next;
+        return dummy.next;
     }
 
     //in-placer reversal
@@ -558,10 +577,111 @@ public class Link_list {
         head_bef.next=after.next;
         return befor.next;
     }
+    public Node oddEvenList(Node head) {
+        if(head == null){
+            return head;
+        }
+        Node odd= head;
+        Node even= odd.next;
+        Node evenhead= even;
+        while(even !=null && even.next!=null ){
+            odd.next=even.next;
+            odd=odd.next;
+            even.next= odd.next;
+            even=even.next;
+        }
+        odd.next=evenhead;
+        return head;
+    }
 
+    public Node removeElements(Node head, int value) {
+
+        while (head != null && head.value == value) {
+            head = head.next;
+        }
+
+        Node current = head;
+
+        while (current != null && current.next != null) {
+            if (current.next.value == value) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
+        }
+
+        return head;
+    }
+
+    public Node removeNthFromEnd(Node head, int n) {
+
+        if(head==null){
+            return null;
+        }
+
+        Node first= head;
+        Node second= head;
+
+        for(int i=0 ; i<n ;i++){
+            first=first.next;
+        }
+        if (first == null) {
+            return head.next;
+        }
+        while(first.next!= null){
+            first=first.next;
+            second=second.next;
+        }
+        second.next= second.next.next;
+        return head;
+    }
+
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int[] res = new int[nums1.length];
+
+        for (int i = 0; i < nums1.length; i++) {
+            int nums = nums1[i];
+            int indexInNums2 = -1;
+
+            for (int j = 0; j < nums2.length; j++) {
+                if (nums2[j] == nums) {
+                    indexInNums2 = j;
+                    break;
+                }
+            }
+
+
+            int nextg = -1;
+            for (int j = indexInNums2 + 1; j < nums2.length; j++) {
+                if (nums2[j] > nums) {
+                    nextg = nums2[j];
+                    break;
+                }
+            }
+
+            res[i] = nextg;
+        }
+
+        return res;
+    }
+
+    public Node swapPairs(Node head) {
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node prev = dummy;
+
+
+        while (prev.next != null && prev.next.next != null) {
+            Node pres = prev.next;
+            Node curr = prev.next.next;
+
+            pres.next = curr.next;
+            curr.next = pres;
+            prev.next = curr;
+
+            prev = pres;
+
+        }
+        return dummy.next;
+    }
 }
-
-
-
-
-
