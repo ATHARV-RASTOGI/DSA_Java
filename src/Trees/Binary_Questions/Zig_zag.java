@@ -24,7 +24,7 @@ public class Zig_zag {
 
             for (int i = 0; i < levelsize; i++) {
 
-                if(!reverse){
+                if(!reverse){//normal order
                     TreeNode cu_node= dequq.pollFirst();
                     cul.add(cu_node.val);
 
@@ -33,7 +33,8 @@ public class Zig_zag {
                     }
                     if(cu_node.right!=null){
                         dequq.addLast(cu_node.right);
-                    }                }
+                    }
+                }
                 else{
                     TreeNode cu_node= dequq.pollLast();
                     cul.add(cu_node.val);
