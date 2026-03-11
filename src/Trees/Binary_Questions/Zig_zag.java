@@ -35,6 +35,7 @@ public class Zig_zag {
                         dequq.addLast(cu_node.right);
                     }
                 }
+
                 else{
                     TreeNode cu_node= dequq.pollLast();
                     cul.add(cu_node.val);
