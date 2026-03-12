@@ -23,19 +23,42 @@ class Main {
 //        System.out.println(t.isSymmetric(root));
 
 
+//        TreeNode root = new TreeNode(1);
+//
+//        root.left = new TreeNode(2);
+//        root.right = new TreeNode(3);
+//
+//        root.left.right = new TreeNode(4);
+//        root.right.right = new TreeNode(5);
+//
+//        Cousins_in_BT obj = new Cousins_in_BT();
+//
+//        boolean result = obj.isCousins(root, 4, 5);
+//
+//        System.out.println(result);
+
         TreeNode root = new TreeNode(1);
 
         root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
+        root.right = new TreeNode(5);
 
+        root.left.left = new TreeNode(3);
         root.left.right = new TreeNode(4);
-        root.right.right = new TreeNode(5);
 
-        Cousins_in_BT obj = new Cousins_in_BT();
+        root.right.right = new TreeNode(6);
 
-        boolean result = obj.isCousins(root, 4, 5);
+        flatten_a_tree obj = new flatten_a_tree();
+        obj.flatten(root);
 
-        System.out.println(result);
+        TreeNode curr = root;
+
+        while(curr != null){
+            System.out.print(curr.val + " -> ");
+            curr = curr.right;
+        }
+
+        System.out.println("null");
+
 
     }
 }
