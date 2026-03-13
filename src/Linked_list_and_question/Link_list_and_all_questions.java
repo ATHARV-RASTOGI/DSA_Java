@@ -1,15 +1,13 @@
-package com.Rastogi;
+package Linked_list_and_question;
 
-import javax.xml.stream.events.NotationDeclaration;
-
-public class Link_list {
+public class Link_list_and_all_questions {
 
 
     private Node head;
     private Node tail;
     private int size;
 
-    public Link_list() {
+    public Link_list_and_all_questions() {
         this.size = 0;
     }
 
@@ -190,11 +188,11 @@ public class Link_list {
         return node;
     }
 
-    public static Link_list Merge(Link_list first, Link_list second) {
+    public static Link_list_and_all_questions Merge(Link_list_and_all_questions first, Link_list_and_all_questions second) {
         Node f = first.head;
         Node s = second.head;
 
-        Link_list ans = new Link_list();
+        Link_list_and_all_questions ans = new Link_list_and_all_questions();
 
         while (f != null && s != null) {
             if (f.value < s.value) {

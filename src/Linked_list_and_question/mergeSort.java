@@ -1,5 +1,5 @@
-package com.Rastogi;
-import com.Rastogi.Link_list.Node;
+package Linked_list_and_question;
+import Linked_list_and_question.Link_list_and_all_questions.Node;
 
 public class mergeSort {
 

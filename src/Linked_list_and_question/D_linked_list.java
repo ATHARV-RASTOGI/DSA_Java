@@ -1,4 +1,4 @@
-package com.Rastogi;
+package Linked_list_and_question;
 
 public class D_linked_list
 {

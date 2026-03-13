@@ -1,3 +1,5 @@
+package Pattern;
+
 public class CenteredNumberPyramid {
     public static void main(String[] args) {
         int n = 50;

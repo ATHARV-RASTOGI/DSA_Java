@@ -1,9 +1,5 @@
 package Stack_queue;
 
-import com.Rastogi.D_linked_list;
-
-import javax.swing.plaf.PanelUI;
-
 public class dynamicstack extends CustomStack{
 
     public dynamicstack(){

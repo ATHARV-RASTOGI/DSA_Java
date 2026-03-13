@@ -1,8 +1,8 @@
-package com.Rastogi;
+package Linked_list_and_question;
 
 public class Main {
     public static void main(String[] args) {
-        Link_list link =new Link_list();
+        Link_list_and_all_questions link =new Link_list_and_all_questions();
 //        link.insertFirst(11);
 //        link.insertFirst(11);
 //        link.insertFirst(3);
@@ -12,8 +12,8 @@ public class Main {
 //        link.duplicates_remove();
 //        link.dispaly();
 
-        Link_list first =new Link_list();
-        Link_list second = new Link_list();
+        Link_list_and_all_questions first =new Link_list_and_all_questions();
+        Link_list_and_all_questions second = new Link_list_and_all_questions();
 
         first.insertlast(1);
         first.insertlast(3);
@@ -24,7 +24,7 @@ public class Main {
         second.insertlast(9);
         second.insertlast(14);
 
-        Link_list ans = Link_list.Merge(first,second);
+        Link_list_and_all_questions ans = Link_list_and_all_questions.Merge(first,second);
         ans.dispaly();
 
 
